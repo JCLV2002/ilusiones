@@ -83,7 +83,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    protected void paintComponent(Graphics g) {&#xa;  super.paintComponent(g);&#xa;        &#xa;        int x = 50;&#xa;        int y = 50;&#xa;        int width = 20;&#xa;        int height = 20;&#xa;        &#xa;        for (int i = 0; i &lt; 10; i++) {&#xa;            g.drawOval(x, y, width, height);&#xa;            x += 20;&#xa;            y += 20;&#xa;            width += 40;&#xa;            height += 40;&#xa;        }&#xa;    }&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    protected void paintComponent(Graphics g) {&#xa;        super.paintComponent (g);&#xa;        int h = jPanel1.getHeight();&#xa;        int w = jPanel1.getWidth();&#xa;        for (int i = 0; i &lt;= w; i++){&#xa;            g.drawLine(w,w/2, h, h/2);&#xa;            g.drawLine(w/2,h,w-i,h/2+i);&#xa;        }&#xa;    }&#xa;}"/>
       </AuxValues>
 
       <Layout>

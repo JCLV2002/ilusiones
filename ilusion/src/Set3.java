@@ -28,19 +28,12 @@ public class Set3 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel(){
             protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-
-                int x = 50;
-                int y = 50;
-                int width = 20;
-                int height = 20;
-
-                for (int i = 0; i < 10; i++) {
-                    g.drawOval(x, y, width, height);
-                    x += 20;
-                    y += 20;
-                    width += 40;
-                    height += 40;
+                super.paintComponent (g);
+                int h = jPanel1.getHeight();
+                int w = jPanel1.getWidth();
+                for (int i = 0; i <= w; i++){
+                    g.drawLine(w,w/2, h, h/2);
+                    g.drawLine(w/2,h,w-i,h/2+i);
                 }
             }
         };
