@@ -31,9 +31,22 @@ public class Set3 extends javax.swing.JFrame {
                 super.paintComponent (g);
                 int h = jPanel1.getHeight();
                 int w = jPanel1.getWidth();
-                for (int i = 0; i <= w; i++){
-                    g.drawLine(w,w/2, h, h/2);
-                    g.drawLine(w/2,h,w-i,h/2+i);
+                for (int i = 0; i <= w; i+=10){
+
+                    g.drawLine(0,h/2-i/2,i/2,0);
+                    g.drawLine(i/2,h/2-i/2,w/2,i/2);
+
+                    g.drawLine(w-i/2,0,w,h/2-i/2);
+                    g.drawLine(w-i/2,h/2-i/2,w/2,i/2);
+
+                    g.drawLine(0,h/2+i/2,i/2,w);
+
+                    g.drawLine(w,h/2+i/2,w-i/2,h);
+
+                    g.drawLine(w/4+i/4,3*h/4,w/2,3*h/4-i/4);
+                    g.drawLine(3*w/4-i/4,3*h/4,w/2,3*h/4-i/4);
+                    g.drawLine(w/4+i/4,3*h/4,w/2,3*h/4+i/4);
+                    g.drawLine(3*w/4-i/4,3*h/4,w/2,3*h/4+i/4);
                 }
             }
         };
@@ -42,12 +55,19 @@ public class Set3 extends javax.swing.JFrame {
                 super.paintComponent(g);
                 int h = getHeight();
                 int w = getWidth();
-                int cx = w / 2;
-                int cy = h / 2;
-                for (int i = 0; i < 360; i += 5) {
-                    int x = cx + (int) (Math.cos(Math.toRadians(i)) * cx);
-                    int y = cy + (int) (Math.sin(Math.toRadians(i)) * cy);
-                    g.drawLine(cx, cy, x, y);
+                for (int i = 0; i <= w/2; i+=5){
+                    //Parte arribaizquierda
+                    g.drawLine(i,h/2,0,i);
+                    g.drawLine(i,i,w/2,h/2-i);
+                    //Parte arribaderecha
+                    g.drawLine(w/2+i,h/2,w,h/2-i);
+                    g.drawLine(w-i,i,w/2,h/2-i);
+                    //Parte abajoizquierda
+                    g.drawLine(i,h/2,0,h-i);
+                    g.drawLine(i,h-i,w/2,h/2+i);
+                    //Parte abajoderecha
+                    g.drawLine(w-i,h/2,w,h-i);
+                    g.drawLine(w-i,h-i,w/2,h/2+i);
                 }
             }
         };
@@ -123,38 +143,41 @@ public class Set3 extends javax.swing.JFrame {
         };
         jPanel6 = new javax.swing.JPanel(){
             protected void paintComponent(Graphics g) {
-                super.paintComponent (g);
+                super.paintComponent(g);
                 int h = jPanel1.getHeight();
                 int w = jPanel1.getWidth();
-                for (int i = 0; i <= w; i+=5){
-                    g.drawLine(i,h-i, i, i);
-                    g.drawLine(i,i,w-i,i);
+                for (int i = 0; i <= w; i += 10) {
+                    g.drawLine(i, h / 2, w / 2, i);
+                    g.drawLine(w / 2, i, w - i, h / 2);
+                    g.drawLine(w - i, h / 2, w / 2, h - i);
+                    g.drawLine(w / 2, h - i, i, h / 2);
                 }
+
             }
         };
         jPanel8 = new javax.swing.JPanel(){
             protected void paintComponent(Graphics g) {
-                super.paintComponent (g);
+                super.paintComponent(g);
                 int h = jPanel1.getHeight();
                 int w = jPanel1.getWidth();
-                for (int i = 0; i <= w/2; i+=5){
-                    g.drawLine(i,h-i, w/2, i);
-                    g.drawLine(w-i,h-i,w/2,i);
-                    g.drawLine(i,h-i,w-i,h-i);
+                for (int i = 0; i <= w / 2; i += 10) {
+                    g.drawLine(i, h - i, w / 2, i);
+                    g.drawLine(w - i, h - i, w / 2, i);
+                    g.drawLine(i, h - i, w - i, h - i);
                 }
+
             }
         };
         jPanel9 = new javax.swing.JPanel(){
             protected void paintComponent(Graphics g) {
-                super.paintComponent (g);
+                super.paintComponent(g);
                 int h = jPanel1.getHeight();
                 int w = jPanel1.getWidth();
                 int r = 10;
-                for(int i = 0; i<w;i+=10){
-                    //g.drawLine(0,i, jPanel7.getWidth()/2,jPanel7.getHeight()/2 );
-                    //g.drawLine(jPanel7.getWidth()/2,jPanel7.getHeight()/2, jPanel7.getWidth(), i);
-                    g.drawOval( (w-(r+i))/2, (h-(r+i))/2,r+i, r+i );
+                for (int i = 0; i < w; i += 20) {
+                    g.drawOval((w - (r + i)) / 2, (h - (r + i)) / 2, r + i, r + i);
                 }
+
             }
         };
 
